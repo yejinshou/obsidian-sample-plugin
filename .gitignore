@@ -20,3 +20,14 @@ data.json
 
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
+
+# Flutter
+flutter_ui/.dart_tool/
+flutter_ui/.flutter-plugins
+flutter_ui/.flutter-plugins-dependencies
+flutter_ui/.packages
+flutter_ui/build/
+flutter_ui/pubspec.lock
+
+# Deployment script backup
+*.bak

@@ -92,3 +92,15 @@ If you have multiple URLs, you can also do:
 ## API Documentation
 
 See https://github.com/obsidianmd/obsidian-api
+
+## Comprehensive Project Documentation
+
+For a detailed understanding of this project and the Obsidian API:
+- **English**: See [PROJECT_UNDERSTANDING.md](./PROJECT_UNDERSTANDING.md)
+- **中文**: See [项目理解文档.md](./项目理解文档.md)
+
+These documents provide comprehensive explanations of:
+- The Obsidian Plugin API and its components
+- This sample plugin's architecture and features
+- Build process and development workflow
+- Best practices for plugin development
