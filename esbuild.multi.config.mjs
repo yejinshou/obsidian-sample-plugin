@@ -11,11 +11,29 @@ if you want to view the source, please visit the github repository of this plugi
 
 const prod = (process.argv[2] === "production");
 
+/**
+ * Multi-output build configuration
+ * 
+ * This configuration demonstrates how to build multiple JavaScript files
+ * from different TypeScript entry points.
+ * 
+ * Outputs:
+ * - dist/main.js (main plugin)
+ * - dist/advanced.js (advanced features module)
+ * 
+ * To use this config instead of esbuild.config.mjs:
+ * 1. Update package.json scripts to use this file
+ * 2. Update manifest.json if needed
+ * 3. Copy both JS files to Obsidian plugin directory
+ */
 const context = await esbuild.context({
 	banner: {
 		js: banner,
 	},
-	entryPoints: ["src/main.ts"],
+	entryPoints: [
+		{ in: "src/main.ts", out: "main" },
+		{ in: "src/advanced/advancedFeatures.ts", out: "advanced" }
+	],
 	bundle: true,
 	external: [
 		"obsidian",
@@ -31,13 +49,14 @@ const context = await esbuild.context({
 		"@lezer/common",
 		"@lezer/highlight",
 		"@lezer/lr",
-		...builtins],
+		...builtins
+	],
 	format: "cjs",
 	target: "es2018",
 	logLevel: "info",
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
-	outfile: "main.js",
+	outdir: "dist",  // Output directory for multiple files
 	minify: prod,
 });
 
