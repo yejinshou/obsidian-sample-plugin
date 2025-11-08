@@ -1,5 +1,5 @@
 import { Plugin } from 'obsidian';
-import { MyPluginSettings, DEFAULT_SETTINGS, loadSettings, saveSettings } from './settings/settings';
+import { MyPluginSettings, loadSettings, saveSettings } from './settings/settings';
 import { SampleSettingTab } from './settings/settingTab';
 import { SampleModal } from './ui/modal';
 import { registerCommands } from './commands/commands';

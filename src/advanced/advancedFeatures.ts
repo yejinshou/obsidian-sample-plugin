@@ -12,7 +12,7 @@ static showAdvancedNotification(message: string): void {
 new Notice(`[Advanced] ${message}`);
 }
 
-static processData(data: any): any {
+static processData(data: Record<string, unknown>): Record<string, unknown> {
 // Advanced data processing logic
 return {
 processed: true,

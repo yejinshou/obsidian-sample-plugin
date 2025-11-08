@@ -3,8 +3,8 @@
  */
 
 export interface PluginData {
-	settings: any;
-	cache: Map<string, any>;
+	settings: Record<string, unknown>;
+	cache: Map<string, unknown>;
 }
 
 export interface CommandContext {
@@ -16,5 +16,5 @@ export type PluginEventType = 'settings-changed' | 'plugin-loaded' | 'plugin-unl
 export interface PluginEvent {
 	type: PluginEventType;
 	timestamp: number;
-	data?: any;
+	data?: Record<string, unknown>;
 }

@@ -6,9 +6,19 @@
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"build:multi": "tsc -noEmit -skipLibCheck && node esbuild.multi.config.mjs production",
+		"dev:multi": "node esbuild.multi.config.mjs",
+		"typecheck": "tsc -noEmit -skipLibCheck",
+		"lint": "eslint src/ --ext .ts",
+		"clean": "rm -f main.js main.js.map && rm -rf dist/",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
 	},
-	"keywords": [],
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin",
+		"typescript",
+		"modular"
+	],
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
